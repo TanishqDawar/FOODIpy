@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodipy | Food</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./css/food.css">
+    <link rel="stylesheet" href="./css/category.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="navbar-outermost">
+        <main class="home-page">
+            <div class="logo">
+                <a href="./index.html" class="logo">
+                    <h1>Foodipy</h1>
+                </a>
+            </div>
+            <div class="nav-bar">
+                <div class="sub-headings search-bar">
+                    <input type="text" class="search-bar-input" placeholder="Search" id="search-input" />
+                    <a href="./search.html">
+                        <button id="search-submit">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="sub-headings">
+                    <a href="./index.html">
+                        <p>Our Bakery</p>
+                    </a>
+                </div>
+                <div class="sub-headings">
+                    <a href="#">
+                        <p>Contact</p>
+                    </a>
+                </div>
+                <div class="sub-headings">
+                    <button id="login-button" class="sub-headings">Log In</button>
+                </div>
+                <div class="sub-headings">
+                    <button id="signup-button" class="sub-headings">Sign Up</button>
+                </div>
+            </div>
+            <div id="signup">
+                <div class="container">
+                    <div class="heading">
+                        <div class="sub-heading">Sign Up</div>
+                        <div>
+                            <button id="close-signup"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <p id="signup-error"></p>
+                    <form action="php/signup.php" method="post">
+                        <div id="div-name-input">
+                            <input id="name-input" type="text" class="input" name="user_name" placeholder="Full Name" />
+                        </div>
+                        <div id="div-email-input">
+                            <input id="email-input" type="text" class="input" name="user_email" placeholder="Email" />
+                        </div>
+                        <div id="div-phone-input">
+                            <input id="phone-input" type="text" class="input" name="user_phone" placeholder="Phone" />
+                        </div>
+                        <div id="div-street-address-input">
+                            <input id="street-address-input" type="text" class="input" name="user_address_street"
+                                placeholder="Street" />
+                        </div>
+                        <div id="div-city-address-input">
+                            <input id="street-address-input" type="text" class="input" name="user_address_city"
+                                placeholder="City" />
+                        </div>
+                        <div id="div-password-input">
+                            <input type="text" id="password-input" class="input" name="password"
+                                placeholder="Password" />
+                        </div>
+                        <div class="check-box">
+                            <input type="checkbox" id="checkbox" />
+                            <span class="check-box-message">I agree to Bakify's Terms of Service, Privacy Policy and
+                                Content
+                                Policies</span>
+                        </div>
+                        <div>
+                            <button id="submit-signup">Create Account</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div id="login">
+                <div class="container">
+                    <div class="heading">
+                        <div class="sub-heading">Log in</div>
+                        <div>
+                            <button id="close-login"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <p id="login-error"></p>
+                    <div>
+                        <input id="phone-input" type="number" class="input" placeholder="Phone Number">
+                    </div>
+                    <div>
+                        <input id="password-input" type="text" class="input" placeholder="Password">
+                    </div>
+                    <div>
+                        <button class="submit-login">Log In</button>
+                    </div>
+                    <div style="font-size: 20px;">
+                        or
+                    </div>
+                    <div>
+                        <button class="google"><i class="fab fa-google"></i>&emsp;Continue with Google</button>
+                    </div>
+                    <div class="have-acc">
+                        New to Bakify? <button id="create_account">Create Account</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <!-- Carousel -->
+    <div class="carousel" style="width: 100vw; margin-bottom: 40px;">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide  carousel_container" data-bs-ride="carousel">
+            <div class="carousel-indicators coursel_buttons">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner carousel_images_container">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="img/offer-1.png" class="d-block w-100">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/offer-2.png" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/offer-3.png" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/offer-4.png" class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div>
+        <div id="vid-container-food">
+            <div id="food_heading">
+            </div>
+            <div class="inst-container">
+                <div class="inst-description">
+                    <div id="meta"></div>
+                    <hr>
+                </div>
+            </div>
+            <hr id="food-vid-hr">
+        </div>
+    </div>
+
+    <div class="main-shopping-container">
+        <div class="shopping-cart">
+            <div class="title">
+                Shopping Bag
+            </div>
+
+            <div class="item">
+                <div class="buttons">
+                    <span id="del1" class="delete-btn"><i class="fas fa-trash"></i></span>
+                    <span id="like1" class="like-btn"><i class="fas fa-cart-plus"></i></span>
+                </div>
+                <div class="image">
+                    <img src="item-2.png" alt="" />
+                </div>
+                <div class="description">
+                    <span id="meal-name"></span>
+                    <span id="meal-name2"></span>
+                    <span id="meal-name3"></span>
+                </div>
+                <div class="quantity">
+                    <button id="incre1" class="plus-btn plus-btn1" type="button" name="button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <input type="text" name="name" value="0">
+                    <button class="minus-btn" id="minus-btn1" type="button" name="button">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+                <div class="total-price">Rs <span id="price1">455</span></div>
+            </div>
+
+            <div class="item">
+                <div class="buttons">
+                    <span id="del2" class="delete-btn"><i class="fas fa-trash"></i></span>
+                    <span id="like2" class="like-btn"><i class="fas fa-cart-plus"></i></span>
+                </div>
+                <div class="image">
+                    <img src="item-2.png" alt="" />
+                </div>
+                <div class="description">
+                    <span id="meal2-name">Coca Cola</span>
+                    <span id="meal2-name2">Cold drink</span>
+                </div>
+                <div class="quantity">
+                    <button class="plus-btn plus-btn2" type="button" name="button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <input type="text" name="name" value="0">
+                    <button class="minus-btn" id="minus-btn2" type="button" name="button">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+                <div class="total-price">Rs <span id="price2">100</span></div>
+            </div>
+
+            <div class="item">
+                <div class="buttons">
+                    <span id="del3" class="delete-btn"><i class="fas fa-trash"></i></span>
+                    <span id="like3" class="like-btn"><i class="fas fa-cart-plus"></i></span>
+                </div>
+                <div class="image">
+                    <img src="item-3.png" alt="" />
+                </div>
+                <div class="description">
+                    <span id="meal3-name">Italian Mozzarella</span>
+                    <span id="meal3-name2">Cheese</span>
+                </div>
+                <div class="quantity">
+                    <button class="plus-btn plus-btn3" type="button" name="button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <input type="text" name="name" value="0">
+                    <button class="minus-btn" id="minus-btn3" type="button" name="button">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+                <div class="total-price">Rs <span id="price3">70</span></div>
+            </div>
+            <div class="item lastitem">
+                <div class="lastitemcenter">
+                    <span class="ttl-price">Total Price: </span>
+                    <span id="ttl-pr"></span>
+                    <button id="pay-now"> Pay Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div id="paynow">
+        <form class="container" action="php/order.php" method="post">
+
+            <div class="heading">
+                <div class="sub-heading">PayNow</div>
+                <div>
+                    <button id="close-pay-now"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <p id="signup-error"></p>
+            <div id="div-name-input">
+                <input id="name-input" type="text" class="input" placeholder="Full Name" name="name" />
+            </div>
+            <div id="div-email-input">
+                <input id="email-input" type="email" class="input" placeholder="Email" name="email" />
+            </div>
+            <div id="div-name-input">
+                <input type="text" class="input" placeholder="Credit Card Number" name="card_no"/>
+            </div>
+            <div id="div-brance-name-input">
+                <input type="text" class="input" placeholder="Branch Name" name="branch_name"/>
+            </div>
+            <div id="div-ifsc-code-input">
+                <input type="text" class="input" placeholder="Enter IFSC code" name="ifsc"/>
+            </div>
+            <div id="div-cvv-input">
+                <input type="text" class="input" placeholder="CVV number" name="cvv"/>
+            </div>
+            <div id="div-name-input">
+                Billing Address <br>
+                <input type="text" class="input" placeholder="Address line 1" name="address_1" />
+            </div>
+            <div id="div-name-input">
+                <input type="text" class="input" placeholder="Address line 2" name="address_2" />
+            </div>
+            <div>
+                <button class="google">
+                    Submit
+                </button>
+            </div>
+
+        </form>
+    </div>
+    <div class="skj_container recommended_foods foods_reco">
+        <div class="skj_flavour">
+            <p class="recommended_heading">
+                You May Also Like <i class="fas fa-chevron-right fa-xs"></i>
+            </p>
+            <div class="skj_varites" id="recommended_food"></div>
+        </div>
+    </div>
+
+    <div class="skj_container recommended_foods">
+        <div class="skj_flavour">
+            <p class="recommended_heading">
+                Trending <i class="fas fa-chevron-right fa-xs"></i>
+            </p>
+            <div class="skj_varites" id="trending_food"></div>
+        </div>
+    </div>
+
+    <div class="footer-cont">
+        <div class="parent-footer">
+            <div class="footer-heading">Foodipy</div>
+            <div class="about-comp">
+                <div class="footer-about">
+                    About Us
+                </div>
+                <div class="about">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea voluptatibus vero quas
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, neque!
+                    nobis deleniti mollitia iusto enim sequi cupiditate quam?
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, blanditiis.
+                </div>
+            </div>
+            <div class="connection-icons">
+                <div class="icons-footer icons-footer-1" id="Follow_">Connect with Us</div>
+                <div class="icons-footer"><i class="fab fa-twitter"></i> &nbsp; Follow Us on Twitter</div>
+                <div class="icons-footer"><i class="fab fa-facebook"></i>&nbsp; Like Us on Facebook</div>
+                <div class="icons-footer"><i class="fab fa-instagram"></i>&nbsp; Follow Us on Instagram</div>
+                <div class="icons-footer"><i class="fab fa-youtube"></i>&nbsp;Subscribe Us on YouTube</div>
+            </div>
+            <div class="contact-info-footer">
+                <div class="connect-icons-footer"><i class="fa-solid fa-house-blank"></i> <a class="quick-link-a"
+                        href="./index.html">Visit
+                        Home Page</a></div>
+                <div class="connect-icons-footer"><i class="fa-solid fa-magnifying-glass-user"></i> <a
+                        class="quick-link-a" href="./search.html">Click to Search</a>
+                </div>
+                <div class="connect-icons-footer"><i class="fa-solid fa-mobile-notch"></i> Call Us on 89456-98760</div>
+                <div class="connect-icons-footer"><i class="fa-solid fa-circle-envelope"></i>E-mail at
+                    Contact@gmail.com</div>
+            </div>
+            <div class="line-end">
+                <hr>
+            </div>
+            <div class="copyright-footer">
+                <div class="end-footer">© 2021 Foodipy pvt ltd. All Rights Reserved | Design by <span
+                        id="nsutian-footer">NSUTians</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/logic.js"></script>
+    <script src="./js/food.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

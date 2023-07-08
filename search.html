@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodipy | Search</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+
+<body>
+    <main class="home-page">
+        <div class="nav-bar">
+            <div>
+                <a href="./index.html" class="logo">Foodipy</a>
+            </div>
+            <div class="headings">
+                <div class="search-bar">
+                    <input type="text" class="search-bar-input" placeholder="Search" id="search-input" />
+                    <a href="./search.html">
+                        <button id="search-submit">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </a>
+                </div>
+                <div class="filter">
+                    <button id="filter-button">
+                        Filters <i class="fas fa-filter"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="filter-container">
+        <div class="filters">
+            <div class="parts">
+                <p class="sub-heading">By Category</p>
+                <div id="by-category"></div>
+            </div>
+            <div class="parts">
+                <p class="sub-heading">By Region</p>
+                <div id="by-region"></div>
+            </div>
+        </div>
+        <div class="filter-search-div">
+            <button id="filter-search">Search</button>
+        </div>
+    </div>
+
+    <div class="skj_flavour">
+        <div class="skj_varites" id="content"></div>
+    </div>
+
+    <div class="footer-cont">
+        <div class="parent-footer">
+            <div class="footer-heading">Foodipy</div>
+            <div class="about-comp">
+                <div class="footer-about">
+                    About Us
+                </div>
+                <div class="about">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea voluptatibus vero quas
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, neque!
+                    nobis deleniti mollitia iusto enim sequi cupiditate quam?
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, blanditiis.
+                </div>
+            </div>
+            <div class="connection-icons">
+                <div class="icons-footer icons-footer-1">Connect with Us</div>
+                <div class="icons-footer"><i class="fab fa-twitter-square"></i> &nbsp; &nbsp; Follow Us on Twitter</div>
+                <div class="icons-footer"><i class="fab fa-facebook-square"></i>&nbsp; &nbsp; Like Us on Facebook</div>
+                <div class="icons-footer"><i class="fab fa-instagram-square"></i>&nbsp; &nbsp; Follow Us on &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Instagram</div>
+                <div class="icons-footer"><i class="fab fa-youtube-square"></i> &nbsp; &nbsp;Subscribe Us on &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; YouTube</div>
+            </div>
+            <div class="contact-info-footer">
+                <div class="connect-icons-footer"><i class="fa-solid fa-house-blank"></i> <a class="quick-link-a"
+                        href="./index.html">Visit
+                        Home Page</a></div>
+                <div class="connect-icons-footer"><i class="fa-solid fa-magnifying-glass-user"></i> <a
+                        class="quick-link-a" href="./search.html">Click to Search</a>
+                </div>
+                <div class="connect-icons-footer"><i class="fa-solid fa-mobile-notch"></i> Call Us on 89456-98760</div>
+                <div class="connect-icons-footer"><i class="fa-solid fa-circle-envelope"></i>E-mail at
+                    Contact@gmail.com</div>
+            </div>
+            <div class="line-end">
+                <hr>
+            </div>
+            <div class="copyright-footer">
+                <div class="end-footer">© 2021 Foodipy pvt ltd. All Rights Reserved | Design by <span
+                        id="nsutian-footer">NSUTians</span></div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/logic.js"></script>
+    <script src="./js/search.js"></script>
+</body>
+
+</html>
